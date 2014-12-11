@@ -32,14 +32,6 @@ extern COLOR_MAP trans_table;
 extern COLOR_MAP alpha_table;
 // in palette.c
 
-//#define SCREENSHOT
-
-#ifdef SCREENSHOT
-extern RGB palet [256];
-
-#include "string.h"
-#endif
-
 //RLE_SPRITE *RLE_bubble [RLE_BUBBLES];
 
 extern volatile int frames_per_second;
@@ -212,36 +204,6 @@ void run_display(int draw_everything, int star_motion)
 
   blit(display, screen, 0, 0, 0, 0, 640, 480);
 //  blit(display, screen, 0, 0, 0, 0, 320, 200);
-
-#ifdef SCREENSHOT
-
-static int scrs = 0;
-static int sshot_counter = 0;
-
-
- char sfile [20];
- char istr [20];
-
- if (sshot_counter > 0)
-  sshot_counter --;
-
- if (key [KEY_F1] && sshot_counter <= 0)
- {
-  BITMAP *scrshot_bmp;
-   scrshot_bmp = create_bitmap(640, 480);
-   blit(screen, scrshot_bmp, 0,0,0,0,640,480);
-
-  strcpy(sfile, "scr");
-  strcat(sfile, itoa(scrs, istr, 10));
-  strcat(sfile, ".bmp");
-  save_bitmap(sfile, scrshot_bmp, palet);
-  clear_to_color(screen, COL_WHITE);
-  scrs ++;
-  sshot_counter = 15;
-  destroy_bitmap(scrshot_bmp);
- }
-
-#endif
 
 }
 

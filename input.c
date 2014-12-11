@@ -19,13 +19,8 @@
 
 #include "sound.h"
 
-//#define SCREENSHOT
-
-#ifdef SCREENSHOT
 #include <string.h>
 extern RGB palet [256];
-
-#endif
 
 void player_fires(int p, int f);
 void player_fires_secondary(int p, int charge);
@@ -58,8 +53,6 @@ void get_input(int p)
 
  int c;
 
-#ifdef SCREENSHOT
-
 static int scrs = 0;
 static int sshot_counter = 0;
 
@@ -77,7 +70,11 @@ static int sshot_counter = 0;
    blit(screen, scrshot_bmp, 0,0,0,0,640,480);
 
   strcpy(sfile, "sshot");
-  strcat(sfile, itoa(scrs, istr, 10));
+  {
+    char buf[20];
+    sprintf(buf, "%d", scrs);
+    strcat(sfile, buf);
+  }
   strcat(sfile, ".bmp");
   save_bitmap(sfile, scrshot_bmp, palet);
   rectfill(screen, 0, 0, 640, 480, COL_WHITE);
@@ -86,8 +83,6 @@ static int sshot_counter = 0;
   sshot_counter = 15;
   destroy_bitmap(scrshot_bmp);
  }
-
-#endif
 
 //#define DEBUGGING
 
