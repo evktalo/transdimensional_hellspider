@@ -1,0 +1,30 @@
+# Trandimensional Hellspider init file
+[Misc]
+EffectVolume = 100
+SoundInit = 1
+Hscore1 = 4060
+Hscore0 = 4975
+Hscore2 = 4935
+key_up = 84
+key_left = 82
+key_right = 83
+key_down = 85
+key_fire = 26
+key_charge = 24
+key_switch = 3
+key_autofire = 1
+MusicVolume = 100
+StereoMode = 2
+sfx_volume = 70
+ambience_volume = 100
+joy_button_1 = 0
+joy_button_2 = 1
+
+# Turning vsync on eliminates a graphic shearing effect which some people might find annoying, 
+# but can slow things down on older systems. 
+
+vsync = 0
+
+# Set Windowed to 1 for windowed mode, or 0 to play fullscreen
+# Fullscreen is recommended!
+Windowed = 0
