@@ -37,9 +37,11 @@ extern int part_ranges [NO_PARTS] [5]; // in hs_build
 
 #define CORE_WEIGHT 80
 
-void run_hs(int h)
+void run_hs()
 {
 //int i;
+
+ int h = 0; // There's always just one hellspider
 
  if (hs[h].alive == 0)
   return;
