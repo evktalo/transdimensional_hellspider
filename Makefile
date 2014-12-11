@@ -7,5 +7,8 @@ DEPENDENCY=$(wildcard *.h) Makefile
 
 all: transdimensional_hellspider
 
+debug: CFLAGS += -DDEBUG -g
+debug: transdimensional_hellspider
+
 transdimensional_hellspider: $(SOURCE) $(DEPENDENCY)
 	$(CC) $(SOURCE) $(CFLAGS) $(LDFLAGS) -o transdimensional_hellspider
