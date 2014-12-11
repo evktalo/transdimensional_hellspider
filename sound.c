@@ -188,8 +188,8 @@ void init_sound(void)
    load_sample_in(BEAT_LINE2, "beat//line2");
    load_sample_in(BEAT_LINE3, "beat//line3");
 
-   load_sample_in(BEAT_AMBI, "beat//AmbiLoo");
-   load_sample_in(BEAT_AMBI2, "beat//AmbiLoo2");
+   load_sample_in(BEAT_AMBI, "beat//ambiLoo");
+   load_sample_in(BEAT_AMBI2, "beat//ambiLoo2");
 //   load_sample_in(BEAT_LOOPA, "beat//LoopA");
 
    load_sample_in(BEAT_DRONG, "beat//drong");
